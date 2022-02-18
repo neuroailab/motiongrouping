@@ -57,27 +57,33 @@ def setup_dataset(args):
     with_gt = True
     pairs = [1, 2, -1, -2]
     if args.dataset == 'DAVIS':
-        
-        basepath = '/path/to/SlotAttention/data/DAVIS2016'
-        img_dir = '/path/to/SlotAttention/data/DAVIS2016/JPEGImages/480p'
-        gt_dir ='/path/to/SlotAttention/data/DAVIS2016/Annotations/480p'
 
-        val_flow_dir = '/path/to/SlotAttention/data/DAVIS2016/Flows_gap1/1080p'
-        val_seq = ['dog', 'cows', 'goat', 'camel', 'libby', 'parkour', 'soapbox', 'blackswan', 'bmx-trees', 
-                    'kite-surf', 'car-shadow', 'breakdance', 'dance-twirl', 'scooter-black', 'drift-chicane', 
-                    'motocross-jump', 'horsejump-high', 'drift-straight', 'car-roundabout', 'paragliding-launch']            
+        # basepath = '/path/to/SlotAttention/data/DAVIS2016'
+        # img_dir = '/path/to/SlotAttention/data/DAVIS2016/JPEGImages/480p'
+        # gt_dir ='/path/to/SlotAttention/data/DAVIS2016/Annotations/480p'
+
+        # val_flow_dir = '/path/to/SlotAttention/data/DAVIS2016/Flows_gap1/1080p'
+
+        basepath = '/data5/dbear/DAVIS2016'
+        img_dir = '/data5/dbear/DAVIS2016/JPEGImages/480p'
+        gt_dir = '/data5/dbear/DAVIS2016/Annotations/480p'
+        val_flow_dir = '/data5/dbear/DAVIS2016/Flows_gap1/1080p'
+
+        val_seq = ['dog', 'cows', 'goat', 'camel', 'libby', 'parkour', 'soapbox', 'blackswan', 'bmx-trees',
+                    'kite-surf', 'car-shadow', 'breakdance', 'dance-twirl', 'scooter-black', 'drift-chicane',
+                    'motocross-jump', 'horsejump-high', 'drift-straight', 'car-roundabout', 'paragliding-launch']
         val_data_dir = [val_flow_dir, img_dir, gt_dir]
         res = "1080p"
 
     elif args.dataset == 'FBMS':
         basepath = '/path/to/FBMS_clean'
         img_dir = '/path/to/FBMS_clean/JPEGImages/'
-        gt_dir ='/path/to/FBMS_clean/Annotations/'    
+        gt_dir ='/path/to/FBMS_clean/Annotations/'
 
         val_flow_dir = '/path/to/FBMS_val/Flows_gap1/'
-        val_seq = ['camel01', 'cars1', 'cars10', 'cars4', 'cars5', 'cats01', 'cats03', 'cats06', 
-                    'dogs01', 'dogs02', 'farm01', 'giraffes01', 'goats01', 'horses02', 'horses04', 
-                    'horses05', 'lion01', 'marple12', 'marple2', 'marple4', 'marple6', 'marple7', 'marple9', 
+        val_seq = ['camel01', 'cars1', 'cars10', 'cars4', 'cars5', 'cats01', 'cats03', 'cats06',
+                    'dogs01', 'dogs02', 'farm01', 'giraffes01', 'goats01', 'horses02', 'horses04',
+                    'horses05', 'lion01', 'marple12', 'marple2', 'marple4', 'marple6', 'marple7', 'marple9',
                     'people03', 'people1', 'people2', 'rabbits02', 'rabbits03', 'rabbits04', 'tennis']
         val_img_dir = '/path/to/FBMS_val/JPEGImages/'
         val_gt_dir ='/path/to/FBMS_val/Annotations/'
@@ -101,24 +107,24 @@ def setup_dataset(args):
         gt_dir ='/path/to/MoCA_filtered/Annotations'
 
         val_flow_dir = '/path/to/MoCA_filtered/Flows_gap1/'
-        val_seq = ['arabian_horn_viper', 'arctic_fox_1', 'arctic_wolf_1', 'black_cat_1', 'crab', 'crab_1', 
-                    'cuttlefish_0', 'cuttlefish_1', 'cuttlefish_4', 'cuttlefish_5', 
-                    'devil_scorpionfish', 'devil_scorpionfish_1', 'flatfish_2', 'flatfish_4', 'flounder', 
-                    'flounder_3', 'flounder_4', 'flounder_5', 'flounder_6', 'flounder_7', 
-                    'flounder_8', 'flounder_9', 'goat_1', 'hedgehog_1', 'hedgehog_2', 'hedgehog_3', 
-                    'hermit_crab', 'jerboa', 'jerboa_1', 'lion_cub_0', 'lioness', 'marine_iguana', 
-                    'markhor', 'meerkat', 'mountain_goat', 'peacock_flounder_0', 
-                    'peacock_flounder_1', 'peacock_flounder_2', 'polar_bear_0', 'polar_bear_2', 
-                    'scorpionfish_4', 'scorpionfish_5', 'seal_1', 'shrimp', 
-                    'snow_leopard_0', 'snow_leopard_1', 'snow_leopard_2', 'snow_leopard_3', 'snow_leopard_6', 
-                    'snow_leopard_7', 'snow_leopard_8', 'spider_tailed_horned_viper_0', 
+        val_seq = ['arabian_horn_viper', 'arctic_fox_1', 'arctic_wolf_1', 'black_cat_1', 'crab', 'crab_1',
+                    'cuttlefish_0', 'cuttlefish_1', 'cuttlefish_4', 'cuttlefish_5',
+                    'devil_scorpionfish', 'devil_scorpionfish_1', 'flatfish_2', 'flatfish_4', 'flounder',
+                    'flounder_3', 'flounder_4', 'flounder_5', 'flounder_6', 'flounder_7',
+                    'flounder_8', 'flounder_9', 'goat_1', 'hedgehog_1', 'hedgehog_2', 'hedgehog_3',
+                    'hermit_crab', 'jerboa', 'jerboa_1', 'lion_cub_0', 'lioness', 'marine_iguana',
+                    'markhor', 'meerkat', 'mountain_goat', 'peacock_flounder_0',
+                    'peacock_flounder_1', 'peacock_flounder_2', 'polar_bear_0', 'polar_bear_2',
+                    'scorpionfish_4', 'scorpionfish_5', 'seal_1', 'shrimp',
+                    'snow_leopard_0', 'snow_leopard_1', 'snow_leopard_2', 'snow_leopard_3', 'snow_leopard_6',
+                    'snow_leopard_7', 'snow_leopard_8', 'spider_tailed_horned_viper_0',
                     'spider_tailed_horned_viper_2', 'spider_tailed_horned_viper_3',
-                    'arctic_fox', 'arctic_wolf_0', 'devil_scorpionfish_2', 'elephant', 
-                    'goat_0', 'hedgehog_0', 
-                    'lichen_katydid', 'lion_cub_3', 'octopus', 'octopus_1', 
-                    'pygmy_seahorse_2', 'rodent_x', 'scorpionfish_0', 'scorpionfish_1', 
+                    'arctic_fox', 'arctic_wolf_0', 'devil_scorpionfish_2', 'elephant',
+                    'goat_0', 'hedgehog_0',
+                    'lichen_katydid', 'lion_cub_3', 'octopus', 'octopus_1',
+                    'pygmy_seahorse_2', 'rodent_x', 'scorpionfish_0', 'scorpionfish_1',
                     'scorpionfish_2', 'scorpionfish_3', 'seal_2',
-                    'bear', 'black_cat_0', 'dead_leaf_butterfly_1', 'desert_fox', 'egyptian_nightjar', 
+                    'bear', 'black_cat_0', 'dead_leaf_butterfly_1', 'desert_fox', 'egyptian_nightjar',
                     'pygmy_seahorse_4', 'seal_3', 'snowy_owl_0',
                     'flatfish_0', 'flatfish_1', 'fossa', 'groundhog', 'ibex', 'lion_cub_1', 'nile_monitor_1',
                     'polar_bear_1', 'spider_tailed_horned_viper_1']
@@ -128,6 +134,9 @@ def setup_dataset(args):
 
     pair_list = [p for p in itertools.combinations(pairs , 2)]
     folders = [os.path.basename(x) for x in gb.glob(os.path.join(basepath, 'Flows_gap1/{}/*'.format(res)))]
+    # folders = [os.path.basename(x) for x in gb.glob(os.path.join(basepath, 'Flows_gap1/*'))]
+    # print(sorted(folders))
+
     flow_dir = {}
     for pair in pair_list:
         p1, p2 = pair
@@ -151,8 +160,8 @@ def setup_dataset(args):
     data_dir = [flow_dir, img_dir, gt_dir]
     trn_dataset = FlowPair(data_dir=data_dir, resolution=resolution, to_rgb=args.flow_to_rgb,
                             with_rgb=False, with_gt=with_gt)
-    
-    val_dataset = FlowEval(data_dir=val_data_dir, resolution=resolution, pair_list=pairs, 
+
+    val_dataset = FlowEval(data_dir=val_data_dir, resolution=resolution, pair_list=pairs,
                             val_seq=val_seq, to_rgb=args.flow_to_rgb, with_rgb=False)
 
     in_out_channels = 3 if args.flow_to_rgb else 2
@@ -162,3 +171,26 @@ def setup_dataset(args):
     cons_scale = 1e-2
 
     return [trn_dataset, val_dataset, resolution, in_out_channels, use_flow, loss_scale, ent_scale, cons_scale]
+
+if __name__ == '__main__':
+    from argparse import ArgumentParser
+    parser = ArgumentParser()
+    parser.add_argument("--dataset", default='DAVIS')
+    # parser.add_argument("--resolution",
+    args = parser.parse_args()
+    args.resolution = (128, 224)
+    args.flow_to_rgb = True
+
+    datasets = setup_dataset(args)
+    trn_dataset, val_dataset, resolution = datasets[:3]
+    print(resolution)
+    flowgaps = list(trn_dataset.flow_dir.keys())
+    vids = trn_dataset.flow_dir[flowgaps[0]]
+
+    from pathlib import Path
+    names = []
+    for i in range(len(vids)):
+        nm = Path(vids[i][0][0]).parent.name
+        names.append(nm)
+    print(sorted(names))
+    print(len(names))
